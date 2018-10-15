@@ -2,9 +2,12 @@ const express = require('express')
 const parser = require('body-parser')
 const app = express()
 const Question = require('./db/models.js')
+const cors = require('cors')
+
 
 app.set('port', process.env.PORT || 3001)
 app.use(parser.json())
+app.use(cors())
 
 app.get('/api/questions', (req, res) => {
   Question.find()
@@ -45,6 +48,16 @@ app.put('/api/questions/:id', (req, res) => {
       console.log(err)
     })
 })
+
+app.delete("/api/questions/:id", (req, res) => {
+  Question.findOneAndDelete({_id: req.params.id})
+  .then(deletedQuestion => {
+      res.json(deletedQuestion);
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+});
 
 app.listen(app.get('port'), () => {
   console.log('Server listening on port ' + app.get('port'))
