@@ -1,0 +1,26 @@
+[
+  {
+    "question" : "¿Dónde está la biblioteca?",
+    "answer" : "https://watson-api-explorer.mybluemix.net/text-to-speech/api/v1/synthesize?text=¿Dónde está la biblioteca?&voice=es-LA_SofiaVoice"
+  },
+  {
+    "question" : "Je voudrais un omlette au fromage",
+    "answer" : "https://watson-api-explorer.mybluemix.net/text-to-speech/api/v1/synthesize?text=Je voudrais un omlette au fromage&voice=fr-FR_ReneeVoice"
+  },
+  {
+    "question" : "Vado a fargli un'offerta che non posso rifiutare",
+    "answer" : "https://watson-api-explorer.mybluemix.net/text-to-speech/api/v1/synthesize?text=Vado a fargli un'offerta che non posso rifiutare&voice=it-IT_FrancescaVoice"
+  },
+  {
+    "question" : "Sie sehen den Wald nicht für alle Bäume",
+    "answer" : "https://watson-api-explorer.mybluemix.net/text-to-speech/api/v1/synthesize?text=Sie sehen den Wald nicht für alle Bäume&voice=de-DE_BirgitVoice"
+  },
+  {
+    "question" : "雨が降り出す後、土を固く",
+    "answer" : "https://watson-api-explorer.mybluemix.net/text-to-speech/api/v1/synthesize?text=雨が降り出す後、土を固く&voice=ja-JP_EmiVoice"
+  },
+  {
+    "question" : "Um pouco de paciência, vale um quilo de inteligência",
+    "answer" : "https://watson-api-explorer.mybluemix.net/text-to-speech/api/v1/synthesize?text=Um pouco de paciência, vale um quilo de inteligência&voice=pt-BR_IsabelaVoice"
+  }
+]
