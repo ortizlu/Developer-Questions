@@ -1,15 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import './Question.css'
 
 class Question extends Component {
-    render() {
-        return (
-            <div className="qa">
-                <p> Question: </p>
-                <p> Answer: </p>
-            </div>
-        );
-    }
+  render() {
+    console.log(this.props)
+    return (
+      <div className="qa">
+        <p> Question: {this.props.question.question || 'QUESTION'} </p>
+        <p> Answer: {this.props.question.answer}</p>
+      </div>
+    )
+  }
 }
 
-export default Question;
+Question.defaultProps = {
+  question: {
+    question: '',
+    answer: ''
+  }
+}
+
+export default Question
