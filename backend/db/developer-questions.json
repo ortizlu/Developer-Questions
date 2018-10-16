@@ -1,14 +1,14 @@
 [
   {
-    "question" : "¿Dónde está la biblioteca?",
-    "answer" : "https://watson-api-explorer.mybluemix.net/text-to-speech/api/v1/synthesize?text=¿Dónde está la biblioteca?&voice=es-LA_SofiaVoice"
+    "question" : "Who jumped over the lazy dog",
+    "answer" : " The Quick Brown Fox"
   },
   {
-    "question" : "Je voudrais un omlette au fromage",
-    "answer" : "https://watson-api-explorer.mybluemix.net/text-to-speech/api/v1/synthesize?text=Je voudrais un omlette au fromage&voice=fr-FR_ReneeVoice"
+    "question" : "what language was this written in",
+    "answer" : "React"
   },
   {
-    "question" : "Vado a fargli un'offerta che non posso rifiutare",
+    "question" : "",
     "answer" : "https://watson-api-explorer.mybluemix.net/text-to-speech/api/v1/synthesize?text=Vado a fargli un'offerta che non posso rifiutare&voice=it-IT_FrancescaVoice"
   },
   {

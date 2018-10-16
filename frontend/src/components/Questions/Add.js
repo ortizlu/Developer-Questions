@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 class Add extends Component {
   constructor() {
@@ -15,12 +16,18 @@ class Add extends Component {
     })
   }
 
-  addQuestion = () => {
-    fetch('http://localhost:3001/api/questions', {
-      method: 'post',
-      body: JSON.stringify({ question: 1, answer: 2 })
+  addQuestion = e => {
+    e.preventDefault()
+    this.props.history.push('/')
+    axios.post('http://localhost:3001/api/questions', this.state)
+    .then(function (response) {
+      console.log(response);
     })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
+
 
   render() {
     return (
@@ -40,7 +47,7 @@ class Add extends Component {
             onChange={this.onChangeText}
             value={this.state.answer}
           />
-          <button>Submit</button>
+          <button onClick={this.addQuestion}>Submit</button>
         </form>
       </div>
     )
