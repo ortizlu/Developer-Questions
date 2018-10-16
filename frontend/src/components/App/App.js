@@ -1,42 +1,39 @@
-import React, { Component } from "react";
-import "./App.css";
-import {
-  Link,
-  Route,
-  Switch
-} from "react-router-dom";
-import Add from "../Questions/Add";
-import Home from "./Home"
-import { Navbar, Nav } from "react-bootstrap";
+import React, { Component } from 'react'
+import './App.css'
+import { Link, Route, Switch } from 'react-router-dom'
+import Add from '../Questions/Add'
+import Home from './Home'
+import Edit from './Edit'
+import { Navbar, Nav } from 'react-bootstrap'
 
 class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       questions: [],
       index: 4
-    };
+    }
   }
 
   componentDidMount() {
-    this.getQuestions();
+    this.getQuestions()
   }
 
   newQuestion = () => {
     this.setState({
       index: Math.floor(Math.random() * this.state.questions.length)
-    });
-  };
+    })
+  }
 
   getQuestions = () => {
-    fetch("http://localhost:3001/api/questions")
+    fetch('http://localhost:3001/api/questions')
       .then(response => response.json())
       .then(questions =>
         this.setState({
           questions: questions
         })
-      );
-  };
+      )
+  }
 
   render() {
     return (
@@ -53,7 +50,7 @@ class App extends Component {
               <Nav />
               <Nav pullRight>
                 <Navbar.Brand>
-                <Link to="/add_question">Add Question</Link>
+                  <Link to="/add_question">Add Question</Link>
                 </Navbar.Brand>
               </Nav>
             </Navbar.Collapse>
@@ -61,26 +58,44 @@ class App extends Component {
           ;
         </header>
         <main>
-       
           {/* <Add /> */}
           <Switch>
             <Route
-              path="/add_question"
+              path="/edit_question"
               render={props => {
-                return <Add {...props} />;
+                return (
+                  <Edit
+                    question={this.state.questions[this.state.index]}
+                    {...props}
+                  />
+                )
               }}
             />
-            <Route 
-            path="/"
-            render={props => {
-              return <Home newQuestion={this.newQuestion} question={this.state.questions} index={this.state.index} {...props} />
-            }}
-          />
+
+            <Route
+              path="/add_question"
+              render={props => {
+                return <Add {...props} />
+              }}
+            />
+            <Route
+              path="/"
+              render={props => {
+                return (
+                  <Home
+                    newQuestion={this.newQuestion}
+                    question={this.state.questions}
+                    index={this.state.index}
+                    {...props}
+                  />
+                )
+              }}
+            />
           </Switch>
         </main>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
