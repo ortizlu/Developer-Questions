@@ -1,18 +1,41 @@
-
 .qa {
-    background-color: rgba(0,0,0,0.4);
-    margin: 0 auto;
-    border-radius: 5px;
-    padding: 4px;
-    width: 50%;
-    color: white;
-    text-align: left;
-    box-shadow: -7px 4px 20px 1px #202020db;
-    
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 4px;
+  width: 80%;
+  color: rgb(46, 46, 46);
+  text-align: left;
 }
 
-.qa p {
-    padding-left: 20px;
-    font-weight: bold;
+@media (min-width: 400px) {
+  .qa h1 {
+    font-size: 5em;
+  }
+}
 
+@media (min-width: 500px) {
+  .qa h1 {
+    font-size: 6.5em;
+  }
+}
+
+@media (min-width: 800px) {
+  .qa h1 {
+    font-size: 7em;
+  }
+}
+
+
+
+@media (min-width: 900px) {
+  .qa h1 {
+    font-size: 9em;
+
+  }
+}
+
+.qa h1 {
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
 }

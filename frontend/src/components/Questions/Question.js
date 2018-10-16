@@ -6,8 +6,12 @@ class Question extends Component {
     console.log(this.props)
     return (
       <div className="qa">
-        <p> Question: {this.props.question.question || 'QUESTION'} </p>
-        <p> Answer: {this.props.question.answer}</p>
+        <h1>
+          {' '}
+          {this.props.question.question ||
+            'What is HTML and what problem does it solve?'}{' '}
+        </h1>
+        {/* <p> Answer: {this.props.question.answer}</p> */}
       </div>
     )
   }
