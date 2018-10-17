@@ -34,7 +34,6 @@ class Home extends Component {
 
           <li onClick={this.deleteQuestion}>Delete</li>
         </nav>
-        ;
       </div>
     )
   }
