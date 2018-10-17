@@ -1,26 +1,25 @@
-[
-  {
-    "question" : "Who jumped over the lazy dog",
-    "answer" : " The Quick Brown Fox"
+[{
+    "question": "What is the difference between props and state?",
+    "answer": "No Answer Provided"
   },
   {
-    "question" : "what language was this written in",
-    "answer" : "React"
+    "question": "What is a React component and why is it useful?",
+    "answer": "No Answer Provided"
   },
   {
-    "question" : "",
-    "answer" : "https://watson-api-explorer.mybluemix.net/text-to-speech/api/v1/synthesize?text=Vado a fargli un'offerta che non posso rifiutare&voice=it-IT_FrancescaVoice"
+    "question": "What one method does every component require?",
+    "answer": "No Answer Provided"
   },
   {
-    "question" : "Sie sehen den Wald nicht für alle Bäume",
-    "answer" : "https://watson-api-explorer.mybluemix.net/text-to-speech/api/v1/synthesize?text=Sie sehen den Wald nicht für alle Bäume&voice=de-DE_BirgitVoice"
+    "question": "Explain what the 'Virtual DOM' is",
+    "answer": "No Answer Provided"
   },
   {
-    "question" : "雨が降り出す後、土を固く",
-    "answer" : "https://watson-api-explorer.mybluemix.net/text-to-speech/api/v1/synthesize?text=雨が降り出す後、土を固く&voice=ja-JP_EmiVoice"
+    "question": "What is AJAX?",
+    "answer": "No Answer Provided"
   },
   {
-    "question" : "Um pouco de paciência, vale um quilo de inteligência",
-    "answer" : "https://watson-api-explorer.mybluemix.net/text-to-speech/api/v1/synthesize?text=Um pouco de paciência, vale um quilo de inteligência&voice=pt-BR_IsabelaVoice"
+    "question": "What is 'serializing'?",
+    "answer": "No Answer Provided"
   }
 ]

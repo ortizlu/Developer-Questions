@@ -1,28 +1,50 @@
 import React, { Component } from 'react'
 import Question from '../Questions/Question'
-import { Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
+import '../Questions/Question.css'
 
 class Home extends Component {
+  deleteQuestion = e => {
+    e.preventDefault()
+    axios
+      .delete(
+        'http://localhost:3001/api/questions/' +
+          this.props.question[this.props.index]._id
+      )
+      .then(response => {
+        console.log(response)
+        this.props.getQuestions()
+        this.props.history.push('/')
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+
   render() {
     return (
       <div>
         <Question question={this.props.question[this.props.index]} />
-        <Button
-          onClick={this.props.newQuestion}
-          bsStyle="primary"
-          bsSize="large"
-        >
-          New Random Question
-        </Button>
+        <nav className="sticky-bottom">
+          <li>
+            <Link to="/edit_question">Edit</Link>
+          </li>
+          <li onClick={this.props.newQuestion}>Random</li>
 
-        <Link to="/edit_question">
-          <Button bsStyle="primary" bsSize="large">
-            Edit Question
-          </Button>
-        </Link>
+          <li onClick={this.deleteQuestion}>Delete</li>
+        </nav>
+        ;
       </div>
     )
+  }
+}
+
+Home.defaultProps = {
+  question: {
+    _id: 1234,
+    question: '',
+    answer: ''
   }
 }
 

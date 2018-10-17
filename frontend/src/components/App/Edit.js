@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import '../Questions/Question.css'
+import { Link } from 'react-router-dom'
+import { FormControl, Button } from 'react-bootstrap'
 
 class Edit extends Component {
   constructor(props) {
@@ -26,6 +29,7 @@ class Edit extends Component {
       )
       .then(response => {
         console.log(response)
+        this.props.getQuestions()
       })
       .catch(error => {
         console.log(error)
@@ -37,21 +41,33 @@ class Edit extends Component {
       <div>
         <form>
           <label>Question</label>
-          <input
+          <FormControl
             type="text"
             name="question"
             onChange={this.onChangeText}
             value={this.state.question}
           />
           <label>Answer</label>
-          <input
+          <FormControl
             type="text"
             name="answer"
             onChange={this.onChangeText}
             value={this.state.answer}
           />
-          <button onClick={this.updateQuestion}>Submit</button>
+          <Button
+            bsStyle="primary"
+            bsSize="large"
+            onClick={this.updateQuestion}
+          >
+            Submit
+          </Button>
         </form>
+
+        <nav className="sticky-bottom">
+          <li>
+            <Link to="/">Back</Link>
+          </li>
+        </nav>
       </div>
     )
   }

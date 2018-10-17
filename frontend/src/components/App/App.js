@@ -4,7 +4,7 @@ import { Link, Route, Switch } from 'react-router-dom'
 import Add from '../Questions/Add'
 import Home from './Home'
 import Edit from './Edit'
-import { Navbar, Nav } from 'react-bootstrap'
+import '../Questions/Question.css'
 
 class App extends Component {
   constructor(props) {
@@ -29,9 +29,14 @@ class App extends Component {
     fetch('http://localhost:3001/api/questions')
       .then(response => response.json())
       .then(questions =>
-        this.setState({
-          questions: questions
-        })
+        this.setState(
+          {
+            questions: questions
+          },
+          () => {
+            this.newQuestion()
+          }
+        )
       )
   }
 
@@ -39,25 +44,17 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <Navbar inverse collapseOnSelect>
-            <Navbar.Header>
-              <Navbar.Brand>
-                <Link to="/">devHelp.io</Link>
-              </Navbar.Brand>
-              <Navbar.Toggle />
-            </Navbar.Header>
-            <Navbar.Collapse>
-              <Nav />
-              <Nav pullRight>
-                <Navbar.Brand>
-                  <Link to="/add_question">Add Question</Link>
-                </Navbar.Brand>
-              </Nav>
-            </Navbar.Collapse>
-          </Navbar>
+          <nav className="sticky-top">
+            <li>
+              <Link to="/">devHelp.io</Link>
+            </li>
+            <li>
+              <Link to="/add_question">Add Question</Link>
+            </li>
+          </nav>
           ;
         </header>
-        <main>
+        <main className="center">
           {/* <Add /> */}
           <Switch>
             <Route
@@ -65,6 +62,7 @@ class App extends Component {
               render={props => {
                 return (
                   <Edit
+                    getQuestions={this.getQuestions}
                     question={this.state.questions[this.state.index]}
                     {...props}
                   />
@@ -75,7 +73,7 @@ class App extends Component {
             <Route
               path="/add_question"
               render={props => {
-                return <Add {...props} />
+                return <Add {...props} getQuestions={this.getQuestions} />
               }}
             />
             <Route
@@ -83,6 +81,7 @@ class App extends Component {
               render={props => {
                 return (
                   <Home
+                    getQuestions={this.getQuestions}
                     newQuestion={this.newQuestion}
                     question={this.state.questions}
                     index={this.state.index}
