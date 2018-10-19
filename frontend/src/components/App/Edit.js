@@ -65,7 +65,7 @@ class Edit extends Component {
 
         <nav className="sticky-bottom">
           <li>
-            <Link to="/">Back</Link>
+            <Link to="/questions">Back</Link>
           </li>
         </nav>
       </div>

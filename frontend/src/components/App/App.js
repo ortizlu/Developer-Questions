@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import './App.css'
-import { Link, Route, Switch } from 'react-router-dom'
+import { Link, Route, Switch, Redirect } from 'react-router-dom'
 import Add from '../Questions/Add'
+import Login from '../Login/Login'
 import Home from './Home'
 import Edit from './Edit'
 import '../Questions/Question.css'
@@ -46,7 +47,7 @@ class App extends Component {
         <header>
           <nav className="sticky-top">
             <li>
-              <Link to="/">devHelp.io</Link>
+              <Link to="/questions">devHelp.io</Link>
             </li>
             <li>
               <Link to="/add_question">Add Question</Link>
@@ -76,8 +77,9 @@ class App extends Component {
                 return <Add {...props} getQuestions={this.getQuestions} />
               }}
             />
+
             <Route
-              path="/"
+              path="/questions"
               render={props => {
                 return (
                   <Home
@@ -89,6 +91,26 @@ class App extends Component {
                   />
                 )
               }}
+            />
+
+            <Route 
+              path="/login"
+              render={props => {
+                return (
+                  <Login
+                  {...props}
+                  />
+                )
+              }}
+            />
+
+            <Route
+            path="/"
+            render={() => {
+                  return (
+                    <Redirect to="/login" />
+                  )
+                }}
             />
           </Switch>
         </main>

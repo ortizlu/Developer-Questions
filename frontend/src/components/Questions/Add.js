@@ -25,7 +25,7 @@ class Add extends Component {
       .post('http://localhost:3001/api/questions', this.state)
       .then(response => {
         this.props.getQuestions()
-        this.props.history.push('/')
+        this.props.history.push('/questions')
       })
       .catch(function(error) {
         console.log(error)
